@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ProblemeComponent } from './probleme.component';
 
@@ -8,9 +9,10 @@ describe('ProblemeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProblemeComponent ]
+      imports: [ReactiveFormsModule],
+      declarations: [ProblemeComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -22,4 +24,13 @@ describe('ProblemeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('champ PRÉNOM invalide avec 2 caractères', () => {
+    let zone = component.problemeForm.controls['nomProbleme']
+    zone.setValue('a'.repeat(2));
+    expect(zone.valid).toBeFalsy;
+
+  })
+
+
 });
