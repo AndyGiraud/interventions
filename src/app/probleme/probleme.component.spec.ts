@@ -25,23 +25,34 @@ describe('ProblemeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('champ PRÉNOM invalide avec 2 caractères', () => {
-    let zone = component.problemeForm.controls['nomProbleme']
+  it('#1 champ PRÉNOM invalide avec 2 caractères', () => {
+    let zone = component.problemeForm.controls['prenom'];
     zone.setValue('a'.repeat(2));
-    expect(zone.valid).toBeFalsy;
+    expect(zone.valid).toBeFalsy();
 
-  })
+  });
 
-  it('champ PRÉNOM valide avec 3 caractères', () => {
-    let zone = component.problemeForm.controls['nomProbleme']
+  it('#2 champ PRÉNOM valide avec 3 caractères', () => {
+    let zone = component.problemeForm.controls['prenom'];
     zone.setValue('a'.repeat(3));
-    expect(zone.valid).toBeTruthy;
+    expect(zone.valid).toBeTruthy();
 
-  })
-  it('champ PRÉNOM valide avec 200 caractères', () => {
-    let zone = component.problemeForm.controls['nomProbleme']
+  });
+  it('#3 champ PRÉNOM valide avec 200 caractères', () => {
+    let zone = component.problemeForm.controls['prenom'];
     zone.setValue('a'.repeat(200));
-    expect(zone.valid).toBeTruthy;
+    expect(zone.valid).toBeTruthy();
+
+  });
+
+  it('#4 champ PRÉNOM invalide avec aucune valeur', () => {
+    let errors = {};
+    let zone = component.problemeForm.get('prenom');
+    
+    errors = zone.errors || {};
+    expect(errors['required']).toBeTruthy();
 
   })
+
+
 });
