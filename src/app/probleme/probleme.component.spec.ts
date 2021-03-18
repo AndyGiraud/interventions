@@ -59,7 +59,7 @@ describe('ProblemeComponent', () => {
     let zone = component.problemeForm.get('prenom');
     zone.setValue(' '.repeat(10));
     errors = zone.errors || {};
-    expect(errors['minLength']).toBeFalsy();
+    expect(errors['minlength']).toBeFalsy();
 
   })
 
@@ -68,7 +68,7 @@ describe('ProblemeComponent', () => {
     let zone = component.problemeForm.get('prenom');
     zone.setValue(' '.repeat(2) + 'a'.repeat(1));
     errors = zone.errors || {};
-    expect(errors['minLength']).toBeFalsy();
+    expect(errors['minlength']).toBeFalsy();
 
   })
 });
