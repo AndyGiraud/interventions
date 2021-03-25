@@ -31,8 +31,8 @@
                             <span class="form-text" *ngIf="(problemeForm.get('prenom').touched ||
                                 problemeForm.get('prenom').dirty) &&
                                 problemeForm.get('prenom').errors">
-
-                                <span *ngIf ="problemeForm.get('prenom').errors.minlength">
+                                    Merci de saisir votre nom.
+                                <span *ngIf ="problemeForm.get('prenom').errors.nbreCaracteresInsuffisants">
                                     <small class="text-muted">
                                         Indiquez au moins 3 caractère.
                                     </small>
