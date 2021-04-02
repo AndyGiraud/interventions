@@ -15,4 +15,19 @@ export class ZonesValidator{
             return {'nbreCaracteresInsuffisants' : true};
         };
     }
+
+    static longueurMaximum(): ValidatorFn{
+        //Sous ANGULAR dans les validateurs pour indiquer un succès retourner NULL autrement retourner une clé valeur JSON
+        return(valeurControle:AbstractControl): {[key:string]: boolean} | null => {
+            
+
+            
+            if( valeurControle.value != null && valeurControle.value.trim().length <= 50){
+
+                return null;
+            }
+
+            return {'nbreCaracteresTropEleve' : true};
+        };
+    }
 }
