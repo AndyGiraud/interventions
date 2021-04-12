@@ -199,7 +199,7 @@ describe('ProblemeComponent', () => {
 
 
     });
-//fonctionne pas logiment pcq suposer etre undefined et non true
+
     it('#27 Zones ADRESSE COURRIEL et CONFIRMER COURRIEL sont invalides si les valeurs sont différentes quand notifier par courriel', () => {
 
         component.appliquerNotifications('ParCourriel');
@@ -214,13 +214,16 @@ describe('ProblemeComponent', () => {
         let groupe = component.problemeForm.get('courrielGroup');
         
 
-        errors = groupe.errors || {};
+        //errors = groupe.errors || {};
+        
+    
+        expect(groupe.status).toEqual('INVALID');
 
-        expect(errors['match']).toBeUndefined();
+        //expect(errors['match']).toBeUndefined();
 
 
     });
-//fonctionne pas logiment pcq suposer etre true et non undefined
+
     it('28 | Zones ADRESSE COURRIEL et CONFIRMER COURRIEL sont valides si les valeurs sont identiques quand notifier par courriel ', () => {
 
         component.appliquerNotifications('ParCourriel');
@@ -238,7 +241,7 @@ describe('ProblemeComponent', () => {
         errors = groupe.errors || {};
 
 
-        expect(errors['match']).toBeTruthy();
+        expect(errors['match']).toBeUndefined();
 
     });
     
@@ -314,7 +317,7 @@ describe('ProblemeComponent', () => {
     expect(errors['maxlength']).toBeTruthy();
    });
 
-   it('#35 Zone TELEPHONE est invalide avec 10 chiffres consécutifs quand notifier par messagerie texte ', () => {
+   it('#36 Zone TELEPHONE est valide avec 10 chiffres consécutifs quand notifier par messagerie texte ', () => {
     component.appliquerNotifications('ParTelephone');
 
     let errors = {};
@@ -323,7 +326,7 @@ describe('ProblemeComponent', () => {
     errors = zone.errors || {};
 
     //pas certain pour validation 35 expect(errors).toBeTruthy();
-    expect(errors['pattern']).toBeTruthy();
+    expect(zone.valid).toBeTrue();
    });
 });
 
