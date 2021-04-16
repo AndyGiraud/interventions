@@ -172,7 +172,7 @@ describe('ProblemeComponent', () => {
 
     errors = groupeCourriel.errors || {};
 
-    expect(errors['match']).toBeUndefined();
+    expect(errors['noMatch']).toBeUndefined();
 
 
   });
@@ -195,7 +195,7 @@ describe('ProblemeComponent', () => {
         errors = groupe.errors || {};
 
   
-        expect(errors['match']).toBeUndefined();
+        expect(errors['noMatch']).toBeUndefined();
 
 
     });
@@ -219,7 +219,7 @@ describe('ProblemeComponent', () => {
     
         expect(groupe.status).toEqual('INVALID');
 
-        //expect(errors['match']).toBeUndefined();
+        //expect(errors['noMatch']).toBeUndefined();
 
 
     });
@@ -241,7 +241,7 @@ describe('ProblemeComponent', () => {
         errors = groupe.errors || {};
 
 
-        expect(errors['match']).toBeUndefined();
+        expect(errors['noMatch']).toBeUndefined();
 
     });
     
