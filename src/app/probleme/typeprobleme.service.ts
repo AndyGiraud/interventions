@@ -9,8 +9,8 @@ import { IProbleme } from './probleme';
   providedIn: 'root'
 })
 export class TypeproblemeService {
-  private baseUrl = 'https://localhost:5001/Interventions';
-  
+  //private baseUrl = 'https://localhost:5001/Interventions';
+  private baseUrl = 'https://interventionag.azurewebsites.net/Interventions';
   constructor(private http: HttpClient) { }
 
   // saveProbleme(probleme: IProbleme): Observable<IProbleme> {

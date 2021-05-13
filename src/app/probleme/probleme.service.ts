@@ -7,7 +7,8 @@ import { IProbleme } from './probleme';
 @Injectable()
 export class ProblemeService {
 
-private baseUrl = 'https://localhost:5001/Interventions';
+//private baseUrl = 'https://localhost:5001/Interventions';
+private baseUrl = 'https://interventionag.azurewebsites.net/Interventions';
 
 constructor(private _http: HttpClient) { }
 
